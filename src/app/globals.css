@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Non-inline so these are emitted on :root and reusable in plain CSS. */
+@theme {
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* Brand palette — deep-navy tone built around #08173c. */
+  --color-cream: #f7efe5;
+  --color-sand: #ece5dc;
+  --color-shell: #f8f5f0;
+  --color-cocoa: #050f2a;
+  --color-bark: #08173c;
+  --color-pitch: #030a1c;
+  --color-navy: #0e2352;
+  --color-navy-soft: #16305f;
+  --color-gold: #c9a44c;
+  --color-espresso: #0a1d4d;
+  --color-ink: #3c4a6b;
+  --color-charcoal: #101828;
+  --color-clay: #4a6096;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--default-font-family, var(--font-sans));
+}
+
+/* One-page navigation: anchor jumps land below the fixed header instead of
+   underneath it, and in-page links glide rather than snap. */
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
