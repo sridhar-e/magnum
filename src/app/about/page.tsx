@@ -3,11 +3,13 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ReadyToSource from '@/components/ReadyToSource';
+import { underConstruction } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'About | MAGNUM AUTO',
   description:
     'Magnum Auto FZE has supplied genuine spare parts and lubricants to trade buyers from Dubai since 2014, sourcing across 15+ vehicle brands and shipping to 40+ countries.',
+  robots: underConstruction,
 };
 
 

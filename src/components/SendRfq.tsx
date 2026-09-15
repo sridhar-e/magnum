@@ -80,13 +80,13 @@ export default function SendRfq({ variant = 'dark' }: { variant?: Variant }) {
 
             <div className={`mt-8 space-y-2 border-t ${t.rule} pt-6 font-medium text-xl ${t.contact}`}>
               <p>
-                <a href="mailto:trade@magnumautofz.com" className="hover:underline">
-                  trade@magnumautofz.com
+                <a href="mailto:sheik@magnumautofz.com" className="hover:underline">
+                  sheik@magnumautofz.com
                 </a>
               </p>
               <p>
-                <a href="tel:+971569009877" className="hover:underline">
-                  +971 56 900 9877
+                <a href="tel:+971502013399" className="hover:underline">
+                  +971 50 201 3399
                 </a>
               </p>
             </div>

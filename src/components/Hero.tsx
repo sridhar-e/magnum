@@ -1,13 +1,25 @@
 import React from 'react';
+import Image from 'next/image';
 import HeroVideo from '@/components/HeroVideo';
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate flex w-full min-h-[100dvh] items-center bg-cover bg-center"
-      style={{ backgroundImage: 'url(/warehouse-hero.webp)' }}
+      className="relative isolate flex w-full min-h-[100dvh] items-center"
     >
+      {/* Backdrop photograph. A responsive next/image rather than a CSS
+          background, so phones get a ~800px AVIF instead of the full 342KB
+          file. The headline is the LCP element, not this photo, so it is left
+          at normal priority and does not compete with the text for the first
+          paint. */}
+      <Image
+        src="/warehouse-hero.webp"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover"
+      />
       {/* Overlay, three layers with one job each.
 
           1. Multiply, not colour-blend. Colour-blend flattened the warehouse
@@ -70,7 +82,9 @@ export default function Hero() {
               <span aria-hidden="true">↗︎</span>
             </a>
             <a
-              href="#whatsapp"
+              href="https://wa.me/971502013399"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-between gap-6 min-w-[15rem] border-2 border-white text-white px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] transition duration-300 hover:bg-white hover:text-black"
             >
               WhatsApp sales
@@ -85,11 +99,10 @@ export default function Hero() {
           </p>
           </div>
 
-          {/* Warehouse footage — decorative, so it is muted, looping and
-              unattended. The poster carries the frame until the file is
-              decoded, and WebM is offered first with an H.264 fallback for
-              older iOS. Kept to a shallow 16:10 band so it sits beside the
-              copy without stretching the fold. */}
+          {/* Warehouse footage — autoplays muted and looping; the audio is
+              turned on from the native control bar. The optimised poster
+              carries the frame until the MP4 is attached after page load. Kept to a shallow 16:10 band so it
+              sits beside the copy without stretching the fold. */}
           <div className="lg:col-span-5">
             <div className="group/video relative">
               {/* A single white slab set down and to the left, giving the

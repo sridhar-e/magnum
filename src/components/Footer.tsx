@@ -3,12 +3,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const contact = [
-  { icon: 'mail', label: 'trade@magnumautofz.com', href: 'mailto:trade@magnumautofz.com' },
-  { icon: 'mail', label: 'prosupply@magnumautofz.com', href: 'mailto:prosupply@magnumautofz.com' },
-  { icon: 'phone', label: '+971 56 900 9877', href: 'tel:+971569009877' },
+  { icon: 'mail', label: 'sheik@magnumautofz.com', href: 'mailto:sheik@magnumautofz.com' },
+  { icon: 'phone', label: '+971 50 201 3399', href: 'tel:+971502013399' },
   {
     icon: 'pin',
-    label: '4203E, 42nd floor, Aspin commercial tower, Sheikh Zayed Road, Dubai, UAE',
+    label: 'E3, 19th Floor,\nConrad Business Tower,\nSheikh Zayed Road\nDubai, UAE',
   },
 ];
 
@@ -99,7 +98,10 @@ export default function Footer() {
           </h3>
           <ul className="mt-4 space-y-3 text-sm text-[#F5F3EE]/80">
             {contact.map((item) => (
-              <li key={item.label} className="flex items-center gap-2">
+              <li
+                key={item.label}
+                className={`flex gap-2 whitespace-pre-line ${item.label.includes('\n') ? 'items-start' : 'items-center'}`}
+              >
                 <Icon name={item.icon} />
                 {item.href ? (
                   <a href={item.href} className="hover:text-white">

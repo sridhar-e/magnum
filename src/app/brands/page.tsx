@@ -4,11 +4,13 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ReadyToSource from '@/components/ReadyToSource';
 import { coverage } from '@/lib/brands';
+import { underConstruction } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Brands | MAGNUM AUTO',
   description:
     'Genuine parts coverage across Korean, Japanese, American, European and Chinese vehicle lines, consolidated and exported from Dubai.',
+  robots: underConstruction,
 };
 
 

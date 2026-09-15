@@ -43,20 +43,24 @@ export function LegalContact() {
     <address className="mt-6 space-y-2 text-[15px] not-italic leading-[1.8] text-ink">
       <span className="block font-semibold text-charcoal">Magnum Auto FZE</span>
       <span className="block">
-        4203E, 42nd Floor, Aspin Commercial Tower
+        E3, 19th Floor,
         <br />
-        Sheikh Zayed Road, Dubai, UAE
+        Conrad Business Tower,
+        <br />
+        Sheikh Zayed Road
+        <br />
+        Dubai, UAE
       </span>
       <span className="block">
         Email:{' '}
-        <a href="mailto:trade@magnumautofz.com" className={linkClass}>
-          trade@magnumautofz.com
+        <a href="mailto:sheik@magnumautofz.com" className={linkClass}>
+          sheik@magnumautofz.com
         </a>
       </span>
       <span className="block">
         Phone / WhatsApp:{' '}
-        <a href="tel:+971569009877" className={linkClass}>
-          +971 56 900 9877
+        <a href="tel:+971502013399" className={linkClass}>
+          +971 50 201 3399
         </a>
       </span>
       <span className="block">
@@ -71,7 +75,7 @@ export function LegalContact() {
 
 export function LegalUpdated() {
   return (
-    <p className="mt-12 border-t border-charcoal/15 pt-6 text-[13px] text-ink/70">
+    <p className="mt-12 border-t border-charcoal/15 pt-6 text-[13px] text-ink">
       Last updated: 29 August 2026
     </p>
   );

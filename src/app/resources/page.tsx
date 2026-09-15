@@ -5,11 +5,13 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ReadyToSource from '@/components/ReadyToSource';
 import { posts } from '@/lib/posts';
+import { underConstruction } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Resources | MAGNUM AUTO',
   description:
     'Notes on sourcing, consolidation and export from the Magnum Auto trade desk in Dubai.',
+  robots: underConstruction,
 };
 
 export default function Resources() {

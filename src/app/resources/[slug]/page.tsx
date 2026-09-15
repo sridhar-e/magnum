@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ReadyToSource from '@/components/ReadyToSource';
 import { getPost, posts } from '@/lib/posts';
+import { underConstruction } from '@/lib/seo';
 
 export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
@@ -17,11 +18,12 @@ export async function generateMetadata(
   const { slug } = await props.params;
   const post = getPost(slug);
 
-  if (!post) return { title: 'Resources | MAGNUM AUTO' };
+  if (!post) return { title: 'Resources | MAGNUM AUTO', robots: underConstruction };
 
   return {
     title: `${post.title} | MAGNUM AUTO`,
     description: post.excerpt,
+    robots: underConstruction,
   };
 }
 

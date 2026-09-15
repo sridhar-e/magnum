@@ -20,7 +20,9 @@ export default function About() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
           {/* Left — narrative */}
           <div className="rounded-3xl bg-white p-8 sm:p-9 lg:p-10 lg:col-span-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">
+            {/* Brand gold is too light for 12px type on white (2.4:1), so this
+                eyebrow uses a deeper gold that clears 4.5:1. */}
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#8a6a1f]">
               About Magnum Auto
             </p>
 

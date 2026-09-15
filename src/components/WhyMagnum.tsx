@@ -42,27 +42,29 @@ export default function WhyMagnum() {
             from Dubai.
           </p>
 
-          <dl className="mt-9 border-t border-white/15 divide-y divide-white/15">
+          {/* A plain list: a <dl> may only hold dt/dd pairs directly, and the
+              number column does not fit that shape. */}
+          <ul className="mt-9 border-t border-white/15 divide-y divide-white/15">
             {reasons.map((item) => (
-              <div
+              <li
                 key={item.number}
                 className="grid grid-cols-[3.5rem_1fr] items-baseline py-5"
               >
-                <span className="italic text-xs text-white/40">
+                <span className="italic text-xs text-white/60">
                   {item.number}
                 </span>
 
                 <div>
-                  <dt className="font-medium text-xl sm:text-[1.375rem] leading-snug text-white">
+                  <h3 className="font-medium text-xl sm:text-[1.375rem] leading-snug text-white">
                     {item.title}
-                  </dt>
-                  <dd className="mt-1.5 text-[13px] leading-relaxed text-white/55">
+                  </h3>
+                  <p className="mt-1.5 text-[13px] leading-relaxed text-white/55">
                     {item.body}
-                  </dd>
+                  </p>
                 </div>
-              </div>
+              </li>
             ))}
-          </dl>
+          </ul>
         </div>
       </div>
     </section>

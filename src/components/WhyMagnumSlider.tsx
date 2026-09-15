@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { ArrowLeft, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { gallerySlides } from '@/lib/gallery';
 
 const AUTOPLAY_MS = 5000;
@@ -86,23 +87,28 @@ export default function WhyMagnumSlider() {
 
       <div className="absolute inset-0 bg-black/25"></div>
 
-      {/* Caption bar — controls sit between the two labels */}
+      {/* Caption bar. Every control is a 24px hit area (WCAG 2.5.8) with the
+          small visual mark centred inside it, so eleven dots plus the arrows
+          need ~330px. That only fits between the two labels at 2xl; below it
+          the controls drop to their own centred row under the labels. */}
       <div className="relative z-10 px-8 pb-8 sm:px-12 sm:pb-10">
         <div className="border-t border-white/25 pt-5">
-          <div className="flex items-center justify-between gap-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
+          <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
             <span>Dubai, UAE</span>
 
-            <div className="flex items-center gap-4">
+            <span className="2xl:order-last">Export operations</span>
+
+            <div className="order-last flex w-full items-center justify-center gap-2 2xl:order-none 2xl:w-auto">
               <button
                 type="button"
                 onClick={() => go(index - 1)}
                 aria-label="Previous slide"
-                className="text-white/70 transition-colors hover:text-white focus:outline-none focus-visible:text-white"
+                className="flex h-6 w-6 items-center justify-center text-white/70 transition-colors hover:text-white focus:outline-none focus-visible:text-white"
               >
-                <span aria-hidden="true">←︎</span>
+                <ArrowLeft size={14} weight="bold" aria-hidden="true" />
               </button>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center">
                 {gallerySlides.map((slide, i) => (
                   <button
                     key={slide.src}
@@ -110,10 +116,15 @@ export default function WhyMagnumSlider() {
                     onClick={() => go(i)}
                     aria-label={`Go to slide ${i + 1}`}
                     aria-current={i === index}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
-                      i === index ? 'w-5 bg-white' : 'w-1.5 bg-white/50 hover:bg-white/80'
-                    }`}
-                  />
+                    className="group/dot flex h-6 w-6 items-center justify-center focus:outline-none"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className={`h-1.5 rounded-full transition-all duration-300 group-focus-visible/dot:ring-2 group-focus-visible/dot:ring-white ${
+                        i === index ? 'w-5 bg-white' : 'w-1.5 bg-white/50 group-hover/dot:bg-white/80'
+                      }`}
+                    />
+                  </button>
                 ))}
               </div>
 
@@ -121,13 +132,11 @@ export default function WhyMagnumSlider() {
                 type="button"
                 onClick={() => go(index + 1)}
                 aria-label="Next slide"
-                className="text-white/70 transition-colors hover:text-white focus:outline-none focus-visible:text-white"
+                className="flex h-6 w-6 items-center justify-center text-white/70 transition-colors hover:text-white focus:outline-none focus-visible:text-white"
               >
-                <span aria-hidden="true">→︎</span>
+                <ArrowRight size={14} weight="bold" aria-hidden="true" />
               </button>
             </div>
-
-            <span>Export operations</span>
           </div>
         </div>
       </div>

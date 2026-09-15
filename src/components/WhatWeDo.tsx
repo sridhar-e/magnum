@@ -49,7 +49,7 @@ export default function WhatWeDo() {
         <div className="mt-14 grid grid-cols-1 border border-charcoal/15 md:grid-cols-3 md:divide-x md:divide-charcoal/15 divide-y divide-charcoal/15 md:divide-y-0">
           {capabilities.map((item) => (
             <article key={item.number} className="flex flex-col p-10 lg:p-12 lg:min-h-[22rem]">
-              <span className="italic text-sm text-charcoal/45">
+              <span className="italic text-sm text-charcoal/65">
                 {item.number}
               </span>
 

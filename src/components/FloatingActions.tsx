@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const WHATSAPP_URL = 'https://wa.me/971569009877';
+const WHATSAPP_URL = 'https://wa.me/971502013399';
 
 export default function FloatingActions() {
   return (
@@ -25,11 +25,13 @@ export default function FloatingActions() {
         </svg>
       </a>
 
-      {/* Request a quote — icon only until hovered or focused */}
+      {/* Request a quote — icon only until hovered or focused. The 1px white
+          border lifts it off the navy sections; side padding drops to 13px so
+          the collapsed button stays a 48px circle with the border included. */}
       <Link
         href="/#send-rfq"
         aria-label="Request a quote"
-        className="group flex h-12 items-center rounded-full bg-bark pl-3.5 pr-3.5 text-white shadow-lg transition-colors duration-300 hover:bg-cocoa focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+        className="group flex h-12 items-center rounded-full border border-white bg-bark px-[13px] text-white shadow-lg transition-colors duration-300 hover:bg-cocoa focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
       >
         <svg
           viewBox="0 0 24 24"

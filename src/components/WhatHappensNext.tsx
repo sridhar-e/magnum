@@ -29,7 +29,7 @@ export default function WhatHappensNext() {
         <div className="mt-8 grid grid-cols-1 gap-10 border-t border-charcoal/20 pt-12 sm:grid-cols-3 sm:gap-14">
           {steps.map((step) => (
             <div key={step.number}>
-              <span className="italic text-xs text-charcoal/45">
+              <span className="italic text-xs text-charcoal/65">
                 {step.number}
               </span>
 

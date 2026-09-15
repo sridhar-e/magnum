@@ -3,11 +3,13 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ReadyToSource from '@/components/ReadyToSource';
+import { underConstruction } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'What We Do | MAGNUM AUTO',
   description:
     'Sourcing, warehousing and consolidation, packing and global delivery of genuine automotive spare parts, handled end to end from Dubai.',
+  robots: underConstruction,
 };
 
 const buyers = [
@@ -122,7 +124,7 @@ export default function WhatWeDoPage() {
             <ol className="mt-12 grid grid-cols-1 border border-charcoal/15 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-charcoal/15 divide-y divide-charcoal/15 lg:divide-y-0">
               {steps.map((step) => (
                 <li key={step.number} className="flex min-h-[11rem] flex-col p-8">
-                  <span className="italic text-xs text-charcoal/45">{step.number}</span>
+                  <span className="italic text-xs text-charcoal/65">{step.number}</span>
                   <h3 className="mt-auto font-medium text-xl lg:text-2xl leading-[1.25] text-charcoal">
                     {step.title}
                   </h3>

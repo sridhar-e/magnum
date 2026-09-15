@@ -3,21 +3,28 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SendRfq from '@/components/SendRfq';
+import { underConstruction } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Contact | MAGNUM AUTO',
   description:
     'Send the brands, part numbers and quantities you need. Magnum Auto FZE comes back with availability, pricing and lead times from Dubai.',
+  robots: underConstruction,
 };
 
 const ADDRESS =
-  '4203E, 42nd floor, Aspin commercial tower, Sheikh Zayed Road, Dubai, UAE';
+  'E3, 19th Floor, Conrad Business Tower, Sheikh Zayed Road, Dubai, UAE';
+const ADDRESS_LINES = [
+  'E3, 19th Floor,',
+  'Conrad Business Tower,',
+  'Sheikh Zayed Road',
+  'Dubai, UAE',
+];
 
 const contactDetails = [
-  { label: '+971 56 900 9877', href: 'tel:+971569009877' },
-  { label: 'trade@magnumautofz.com', href: 'mailto:trade@magnumautofz.com' },
-  { label: 'prosupply@magnumautofz.com', href: 'mailto:prosupply@magnumautofz.com' },
-  { label: 'WhatsApp: +971 56 900 9877', href: 'https://wa.me/971569009877' },
+  { label: '+971 50 201 3399', href: 'tel:+971502013399' },
+  { label: 'sheik@magnumautofz.com', href: 'mailto:sheik@magnumautofz.com' },
+  { label: 'WhatsApp: +971 50 201 3399', href: 'https://wa.me/971502013399' },
 ];
 
 export default function Contact() {
@@ -87,7 +94,11 @@ export default function Contact() {
                 </p>
 
                 <address className="mt-6 not-italic text-[15px] leading-[1.8] text-ink">
-                  {ADDRESS}
+                  {ADDRESS_LINES.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
                 </address>
 
                 <a

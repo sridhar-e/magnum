@@ -75,7 +75,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('RFQ submission failed', error);
     return NextResponse.json(
-      { ok: false, error: 'We could not record that RFQ. Please email trade@magnumautofz.com.' },
+      { ok: false, error: 'We could not record that RFQ. Please email sheik@magnumautofz.com.' },
       { status: 500 }
     );
   }
